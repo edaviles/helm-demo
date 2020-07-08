@@ -1,0 +1,25 @@
+name: Deploying App to AKS using Helm
+
+on:
+  label:
+    types: [created]
+
+jobs:
+  deployment:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: 'Checkout'  # Checkout the repository code.
+      uses: 'actions/checkout@v1'
+
+    - name: 'Deploy'
+      uses: 'deliverybot/helm@master'
+      with:
+        token: '${{ github.token }}'
+        chart: 'app'
+        secrets: '${{ toJSON(secrets) }}'
+        chart: 'app'
+        namespace: default
+        release: helmlab
+        value-files: './values.yml'
+      env:
+        KUBECONFIG_FILE: '${{ secrets.KUBECONFIG }}'
