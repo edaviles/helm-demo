@@ -1,8 +1,8 @@
 name: Deploying App to AKS using Helm
 
-on:
-  label:
-    types: [created]
+on: 
+  pull_request:
+    types: [labeled]
 
 jobs:
   deployment:
