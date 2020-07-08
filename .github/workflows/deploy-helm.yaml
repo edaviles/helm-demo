@@ -15,7 +15,7 @@ jobs:
       with:
         release: 'oaviles/netcoreangularapp:latest'
         namespace: 'default'
-        chart: 'helm-demo-github-actions'
+        chart: 'app'
         token: '${{ github.token }}'
         values: |
           name: foobar
