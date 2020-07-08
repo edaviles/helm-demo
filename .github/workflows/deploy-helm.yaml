@@ -13,7 +13,7 @@ jobs:
     - name: 'Deploy'
       uses: 'deliverybot/helm@v1'
       with:
-        release: 'netcoreangularapp'
+        release: 'helm-demo-githubactions'
         namespace: 'default'
         chart: 'app'
         token: '${{ github.token }}'
