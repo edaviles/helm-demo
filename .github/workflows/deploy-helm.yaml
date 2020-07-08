@@ -13,9 +13,9 @@ jobs:
     - name: 'Deploy'
       uses: 'deliverybot/helm@v1'
       with:
-        release: 'helm-demo'
+        release: 'oaviles/netcoreangularapp:latest'
         namespace: 'default'
-        chart: 'helm-demo'
+        chart: 'helm-demo-github-actions'
         token: '${{ github.token }}'
         values: |
           name: foobar
